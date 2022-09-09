@@ -12,6 +12,29 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
+    <!-- ****** favicons ****** -->
+	<link rel="shortcut icon" href="public/images/favicons/favicon2.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="public/images/favicons/favicon2.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="public/images/favicons/favicon2-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="public/images/favicons/favicon2-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="public/images/favicons/favicon2-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="public/images/favicons/favicon2-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="public/images/favicons/favicon2-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="public/images/favicons/favicon2-16.png">
+	<link rel="apple-touch-icon" href="public/images/favicons/favicon2-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="public/images/favicons/favicon2-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="public/images/favicons/favicon2-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="public/images/favicons/favicon2-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="public/images/favicons/favicon2-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="public/images/favicons/favicon2-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="public/images/favicons/favicon2-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="public/images/favicons/favicon2-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="public/images/favicons/favicon2-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="public/images/favisons/favicon2-144.png">
+	<meta name="msapplication-config" content="public/images/favisons/browserconfig.xml">
+	<!-- ****** favicons ****** -->
 </head>
 <body>
     <header class="topBar">
@@ -20,13 +43,14 @@
         </section>
 
         <section id="headerTopRight">
-            <h2 data-user-id='<%= user._id %>'><%= user.userName %></h2>
+            <h3 data-user-id='<%= user._id %>'><%= user.userName %></h3>
             <a href="/logout">Logout</a>
         </section>
 
     </header>
-    <header class="navBar">
-			<nav class="mytabs">
+
+    <main class="navBar">
+		<nav class="mytabs">
 
                 <!--**********DAILY TAKS************-->
                 <input type="radio" id="tasksTab" name="mytabs" checked="checked">
@@ -657,7 +681,7 @@
                         <span id="percent">0%</span>
                         <progress id="file" max="43" value="0"> 0% </progress>
                     </main> -->
-                    <main id="main1">
+                    <main id="artMain1">
                             <div id="artDiv1" class="<%= (user.completedDivs.includes('artDiv1') ? 'true' : 'false')  %>"><img src="https://acnhapi.com/v1/images/art/academic_painting" id="image1" class="images"><h4>Academic painting</h4></div>
                             
                             <div id="artDiv2" class="<%= (user.completedDivs.includes('artDiv2') ? 'true' : 'false')  %>"><img src="https://acnhapi.com/v1/images/art/amazing_painting" id="image2" class="images"><h4>Amazing painting</h4></div>
@@ -753,12 +777,12 @@
                 <label for="umbrellasTab">Umbrellas</label>
                 <section class="tab">
                     <h2>Umbrellas</h2>
-                    <main id="progress">
+                    <!-- <main id="progress">
                         <label for="file" id="collectionText">Collection Progress:</label>
                         <span id="percent">0%</span>
                         <progress id="file" max="68" value="0"> 0% </progress>
-                    </main>
-                    <main id="main1">
+                    </main> -->
+                    <main id="UmbrellasMain1">
                         <div id="umbrellaDiv1" class="<%= (user.completedDivs.includes('umbrellaDiv1') ? 'true' : 'false')  %>">
                             <img src="https://dodo.ac/np/images/6/60/Apple_Umbrella_NH_Icon.png" id="umbrellaNum1" class="images" name="Apple">
                             <h4>Apple</h4>
@@ -1036,8 +1060,8 @@
                     </main>
                 </section>
 
-			</nav>
-    </header>
+		</nav>
+    </main>
 
 
 

@@ -78,15 +78,20 @@ html {
      background-attachment: fixed;
 }
 body {
+     padding: 1rem .5rem;
      font-family: 'Oswald', sans-serif;
-     background: #5BCFF4;
-     font-size: 2rem;
+     background: rgb(146,227,252);
+     background: linear-gradient(90deg, rgba(146,227,252,1) 0%, rgba(190,239,255,1) 17%, rgba(190,239,255,1) 78%, rgba(146,227,252,1) 100%);
+}
+header {
+     padding: 0 1.5rem;
 }
 .topBar {
-     background: white;
+     /* background: rgb(146,227,252);
+     background: linear-gradient(90deg, rgba(146,227,252,1) 0%, rgba(190,239,255,1) 17%, rgba(190,239,255,1) 78%, rgba(146,227,252,1) 100%); */
      margin-top: 0;
      display: flex;
-     position: relative
+     position: relative;
 }
 #headerTopLeft {
      width: 50%;
@@ -95,7 +100,7 @@ body {
 #headerTopRight {
      width: 50%;
      text-align: right;
-     padding: 0 1% 1% 0;
+     padding: 0 3rem 1% 0;
      position: absolute;
      bottom: 0;
      right: 0;
@@ -104,6 +109,93 @@ body {
      width: 100px;
      /* display: block; */
      /* margin-right: auto; */
+}
+h3 {
+     font-size: 2rem;
+}
+a {
+     font-size: 1.2rem;
+}
+
+
+/* ************ Index ***************** */
+#main1 {
+     width: 95%;
+     margin: 1.5rem auto;
+     padding: 20px;
+     background: rgba(255, 255, 255, 0.503);
+     border-radius: 2rem;
+     
+}
+#main1 p {
+     font-size: 1.5rem;
+     line-height: 1.5;
+     margin: 2rem 0;
+     width: 99%;
+}
+#loginButton, #signupButton {
+     background-color: #afeaa7;
+     border: 2px solid #0d8723;
+     border-radius: 30px;
+     box-shadow: #422800 4px 4px 0 0;
+     color: #422800;
+     cursor: pointer;
+     display: inline-block;
+     font-weight: 600;
+     font-size: 18px;
+     padding: 0 18px;
+     line-height: 50px;
+     text-align: center;
+     text-decoration: none;
+     user-select: none;
+     -webkit-user-select: none;
+     touch-action: manipulation;
+}
+     
+#loginButton:hover, #signupButton:hover {
+     background-color: #fff;
+}
+
+#loginButton:active, #signupButton:active {
+     box-shadow: #2f2f2f 2px 2px 0 0;
+     transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+     #loginButton, #signupButton {
+     min-width: 120px;
+     padding: 0 25px;
+     }
+}  
+/* ************ Login ***************** */
+
+
+/* ************ Signup ***************** */
+#signupSection {
+     margin: 2rem;
+     padding: 2rem;
+     margin: 1rem auto;
+     display: flex;
+     flex-flow: column nowrap;
+     justify-content: center;
+     align-items: center;
+}
+#signupSection form {
+     margin: 0 auto;
+     padding: 2rem;
+     align-items: center;
+     display: flex;
+     flex-flow: column nowrap;
+     justify-content: center;
+     align-items: center;
+     
+}
+#signupSection form input {
+     margin: 1rem auto;
+}
+#main1 h3 {
+     width: 100%;
+     text-align: center;
 }
 
 /* ************            ************* */
@@ -120,7 +212,7 @@ main {
      flex-wrap: wrap;
      justify-content: space-around;
      width: 100%;
-     margin-top: 40px;
+     margin-top: 1rem;
 
 }
 #progress {
@@ -145,14 +237,14 @@ main {
      height: 50px;
 }
 div {
-     width: 130px;
-     height: 130px;
+     width: 100px;
+     height: 100px;
      display: flex;
      flex-wrap: wrap;
      justify-content: space-around;
      text-align: center;
      font-size: 2rem;
-     margin: 1%;
+     margin: .1rem;
      padding: 5px;
      border-radius: 15%;
 }
@@ -163,13 +255,15 @@ div img {
 }
 div h4 {
      width: 100%;
-     font-size: 2rem;
+     font-size: 1.5rem;
      font-weight: 900;
      flex: 1 0 100%;
 
 }
 .true {
-     background-color: rgb(59, 177, 59);
+     background: rgb(65,186,65);
+     background: radial-gradient(circle, rgba(65,186,65,1) 0%, rgba(185,254,185,1) 71%);
+     box-shadow: 5px 5px 5px rgb(62, 80, 62);
 }
 
 /* ************SECTION TABS************* */
@@ -178,7 +272,7 @@ div h4 {
      flex-wrap: wrap;
      max-width: 99%;
      margin: 10px auto;
-     padding: 5px;
+     padding: 1rem;
      font-size: 2rem;
 }
 .mytabs input[type="radio"] {
@@ -187,14 +281,14 @@ div h4 {
 }
 .mytabs label {
      padding: 8px;
-     background: #e2e2e2;
+     background: rgba(97, 97, 97, 0.503);
      font-weight: bold;
      font-size: 2rem;
 }
 .mytabs .tab {
      width: 100%;
-     padding: 20px;
-     background: white;
+     padding: 10px;
+     background: rgba(255, 255, 255, 0.503);
      order: 1;
      display: none;
      border-radius: 0;
@@ -208,6 +302,8 @@ div h4 {
 }
 .mytabs input[type="radio"]:checked + label {
      background: white;
+     box-shadow: 2px 3px 5px rgb(70, 70, 70);
+     z-index: 6;
 }
 
 /******************************************
@@ -220,18 +316,71 @@ div h4 {
 
 #footerDiv {
      display: flex;
-     justify-content: center;
-     align-items: center;
+     justify-content: flex-end;
+     align-items: right;
      width: 100%;
      margin: 30px 0;
+     padding: 0 10px;
 }
+
+
 
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
-/* @media (min-width: 700px) {
-     html {
-          background-image: url(/images/bg-wide.jpg);
+@media (min-width: 600px) {
+     body {
+          padding: 0 8%;
      }
+     div {
+          width: 10rem;
+          height: 10rem;
+     }
+     div img {
+          width: 3em;
+          height: 3em;
+     }
+     div h4 {
+          font-size: .7em;
+     }
+}
 
-} */
+@media (min-width: 800px) {
+     body {
+          padding: 0 8%;
+     }
+     div {
+          width: 20rem;
+          height: 20rem;
+     }
+     div img {
+          width: 7em;
+          height: 7em;
+     }
+     div h4 {
+          font-size: 1em;
+     }
+     #headerImg {
+          width: 15rem;
+     }
+}
+
+@media (min-width: 1100px) {
+     body {
+          padding: 0 8%;
+     }
+     div {
+          width: 20rem;
+          height: 20rem;
+     }
+     div img {
+          width: 7em;
+          height: 7em;
+     }
+     div h4 {
+          font-size: 1em;
+     }
+     #headerImg {
+          width: 20rem;
+     }
+}

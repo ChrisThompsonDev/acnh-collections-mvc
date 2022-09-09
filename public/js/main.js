@@ -11,7 +11,8 @@ Array.from(todoComplete).forEach((el)=>{
 })
 
 async function addDivId(){
-  const userId = document.querySelector('h2[data-user-id]').dataset.userId
+  this.setAttribute("class", "true")
+  const userId = document.querySelector('h3[data-user-id]').dataset.userId
   const divId = this.id
   try {
     await fetch('todos/addDivId', {
@@ -22,7 +23,7 @@ async function addDivId(){
         divId: divId
       })
     })
-    location.reload()
+    /* location.reload() */
   } catch(err) {
     console.log(err)
   }
