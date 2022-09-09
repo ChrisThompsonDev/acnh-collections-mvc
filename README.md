@@ -20,7 +20,7 @@ Over time, we started finding it difficult to keep track of other things, so now
 
 ## Optimizations
 
-I have added a lot of features to this over time. It started as simple text and checkboxes. It now has images, nicer formatting and a progress bar!
+I have added a lot of features to this over time. It started as simple text and checkboxes. It now has images and nicer formatting.
 
 I originally started by using the Animal Crossing API to create new DOM elements with checkboxes. When checked, the data is kept in local storage. The songs from the newest update were not in the API, so I created a separate factory and manually copied the links from Nookipedia.
 
@@ -32,15 +32,21 @@ I felt that this was not the best approach for progressive rendering and it coul
 
 Every project is a lesson learned in CSS!
 
-
+I also became more comfortable with navigating MVC architecture. 
 
 ## Future Improvements:
 
-Currently this project is still a WIP. I have the JS grabbing the DOM elements properly. I need to code this to send that information to MongoDB and update the DOM by highlighting the checked elements. 
+Currently this project is still a WIP.
+
+I plan to add Google Auth as a login option.
 
 This is being built using Mobile First ideology. I will be updating this with media queries for landscape and larger screen sizes.
 
 The CSS needs work on the landing, login and signup pages. 
+
+I plan to build an API with all of the collection information.
+
+Will be replacing the hard coded HTML with more ejs loops using the new API.
 
 Will add other collections, such as clothing, fish, bugs, and more. 
 
