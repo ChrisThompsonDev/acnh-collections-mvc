@@ -30,7 +30,8 @@ async function addDivId(){
 }
 
 async function removeDivId(){
-  const userId = document.querySelector('h2[data-user-id]').dataset.userId
+  console.log(`${this.id} to be removed`)
+  const userId = document.querySelector('h3[data-user-id]').dataset.userId
   const divId = this.id
   try {
     await fetch('todos/removeDivId', {
