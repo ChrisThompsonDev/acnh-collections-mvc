@@ -1,70 +1,70 @@
-/* const deleteBtn = document.querySelectorAll('.del') */
-const todoItem = document.querySelectorAll('div')
-const todoComplete = document.querySelectorAll('div.completed')
+const todoItem = document.querySelectorAll('div.false')
+const todoComplete = document.querySelectorAll('div.true')
 
-/* Array.from(deleteBtn).forEach((el)=>{
-    el.addEventListener('click', deleteTodo)
-}) */
 
 Array.from(todoItem).forEach((el)=>{
-    el.addEventListener('click', markComplete)
+    el.addEventListener('click', addDivId)
 })
 
 Array.from(todoComplete).forEach((el)=>{
-    el.addEventListener('click', markIncomplete)
+    el.addEventListener('click', removeDivId)
 })
 
-/* async function deleteTodo(){
-    const todoId = this.parentNode.dataset.id
-    try{
-        const response = await fetch('todos/deleteTodo', {
-            method: 'delete',
-            headers: {'Content-type': 'application/json'},
-            body: JSON.stringify({
-                'todoIdFromJSFile': todoId
-            })
-        })
-        const data = await response.json()
-        console.log(data)
-        location.reload()
-    }catch(err){
-        console.log(err)
-    }
-} */
-
-async function markComplete(){
-    const itemId = this.id
-    /* try{
-        const response = await fetch('todos/markComplete', {
-            method: 'put',
-            headers: {'Content-type': 'application/json'},
-            body: JSON.stringify({
-                'todoIdFromJSFile': itemId
-            })
-        })
-        const data = await response.json()
-        console.log(itemId)
-        location.reload()
-    }catch(err){
-        console.log(err)
-    } */
-    console.log(itemId)
+async function addDivId(){
+  const userId = document.querySelector('h2[data-user-id]').dataset.userId
+  const divId = this.id
+  try {
+    await fetch('todos/addDivId', {
+      method: 'post',
+      headers: {'Content-type': 'application/json'},
+      body: JSON.stringify({
+        userId: userId,
+        divId: divId
+      })
+    })
+    location.reload()
+  } catch(err) {
+    console.log(err)
+  }
 }
 
-async function markIncomplete(){
-    const todoId = this.parentNode.dataset.id
-    try{
-        const response = await fetch('todos/markIncomplete', {
-            method: 'put',
-            headers: {'Content-type': 'application/json'},
-            body: JSON.stringify({
-                'todoIdFromJSFile': todoId
-            })
-        })
-        const data = await response.json()
-        console.log(data)
-        location.reload()
-    }catch(err){
-        console.log(err)
-    }
+async function removeDivId(){
+  const userId = document.querySelector('h2[data-user-id]').dataset.userId
+  const divId = this.id
+  try {
+    await fetch('todos/removeDivId', {
+      method: 'post',
+      headers: {'Content-type': 'application/json'},
+      body: JSON.stringify({
+        userId: userId,
+        divId: divId
+      })
+    })
+    location.reload()
+  } catch(err) {
+    console.log(err)
+  }
+}
+
+// *************** Store Last Tab so preserve tab selection on fage reload ************
+
+let radios = document.querySelectorAll('input')
+Array.from(radios).forEach((element) => {
+  element.addEventListener('click', storeTab)
+}) // Add click event to radio buttons
+
+function storeTab(){
+  console.log(this.id)
+  localStorage.setItem('lastTab', this.id);
+} //Store selected radio button in localStorage
+
+var val = localStorage.getItem('lastTab');
+console.log(`Last Tab Selected = ${val}`) // local storage value
+
+for(var i=0;i<radios.length;i++){
+  if(radios[i].id === val){
+    console.log(val)
+    document.getElementById(`tasksTab`).removeAttribute('checked')
+    document.getElementById(`${val}`).setAttribute('checked','checked'); // marking the required radio as checked
+  }
 }
