@@ -1,21 +1,16 @@
-/* const todoItem = document.querySelectorAll('div.false')
-const todoComplete = document.querySelectorAll('div.true') */
+// *************** Mark Items as complete or incomplete ************
 
-// change to 1 function: ChangeDivStatus
-// if statement: If false, run code for addDiv
-  //if true, run code for removeDivId
-
-const taskItems = document.querySelectorAll('div')
+const taskItems = document.querySelectorAll('div') // Select all div items
 
 Array.from(taskItems).forEach((el)=>{
-  el.addEventListener('click', ChangeDivStatus)
+  el.addEventListener('click', ChangeDivStatus) // Add click event to all divs
 })
 
 async function ChangeDivStatus(){
-  if (this.getAttribute('class') === 'false'){
+  if (this.getAttribute('class') === 'false'){ // If the div is not already highlighted, change its class to true
     this.setAttribute("class", "true")
-    const userId = document.querySelector('h3[data-user-id]').dataset.userId
-    const divId = this.id
+    const userId = document.querySelector('h3[data-user-id]').dataset.userId // grab logged in user ID from h3
+    const divId = this.id // grab the div ID
     try {
       await fetch('todos/addDivId', {
         method: 'post',
@@ -23,17 +18,15 @@ async function ChangeDivStatus(){
         body: JSON.stringify({
           userId: userId,
           divId: divId
-        })
+        }) // Send the div ID and User ID to the controller
       })
-      /* location.reload() */
     } catch(err) {
       console.log(err)
     }
-  } else if (this.getAttribute('class') === 'true') {
-    console.log(`${this.id} to be removed`)
+  } else if (this.getAttribute('class') === 'true') { // If the div is already highlighted, change its class to false
     this.setAttribute("class", "false")
-    const userId = document.querySelector('h3[data-user-id]').dataset.userId
-    const divId = this.id
+    const userId = document.querySelector('h3[data-user-id]').dataset.userId // grab logged in user ID from h3
+    const divId = this.id // grab the div ID
     try {
       await fetch('todos/removeDivId', {
         method: 'post',
@@ -41,61 +34,15 @@ async function ChangeDivStatus(){
         body: JSON.stringify({
           userId: userId,
           divId: divId
-        })
+        }) // Send the div ID and User ID to the controller
       })
-      /* location.reload() */
     } catch(err) {
       console.log(err)
     }
     }
 }
 
-/* Array.from(todoItem).forEach((el)=>{
-    el.addEventListener('click', addDivId)
-})
 
-Array.from(todoComplete).forEach((el)=>{
-    el.addEventListener('click', removeDivId)
-}) */
-
-/* async function addDivId(){
-  this.setAttribute("class", "true")
-  const userId = document.querySelector('h3[data-user-id]').dataset.userId
-  const divId = this.id
-  try {
-    await fetch('todos/addDivId', {
-      method: 'post',
-      headers: {'Content-type': 'application/json'},
-      body: JSON.stringify({
-        userId: userId,
-        divId: divId
-      })
-    })
-    location.reload()
-  } catch(err) {
-    console.log(err)
-  }
-}
-
-async function removeDivId(){
-  console.log(`${this.id} to be removed`)
-  this.setAttribute("class", "false")
-  const userId = document.querySelector('h3[data-user-id]').dataset.userId
-  const divId = this.id
-  try {
-    await fetch('todos/removeDivId', {
-      method: 'post',
-      headers: {'Content-type': 'application/json'},
-      body: JSON.stringify({
-        userId: userId,
-        divId: divId
-      })
-    })
-    location.reload()
-  } catch(err) {
-    console.log(err)
-  }
-} */
 
 // *************** Store Last Tab so preserve tab selection on fage reload ************
 
@@ -118,4 +65,44 @@ for(var i=0;i<radios.length;i++){
     document.getElementById(`tasksTab`).removeAttribute('checked')
     document.getElementById(`${val}`).setAttribute('checked','checked'); // marking the required radio as checked
   }
+}
+
+// *************** Tracking bar ************
+// Global variable for each tracking bar
+// For loop counting number of DIVs for each category
+// Change span ID to global variable
+// Add or subtract from global variable with each click
+/* function progressBar(categoryId, categoryMax, categoryClass) {
+  for(let i = 0; i <= categoryMax; i++) {
+    
+  }
+} */
+
+
+
+// *************** Clear Tasks Button ************
+// All task divs classes are marked as false
+// All task divs are removed from database
+const clearButton = document.getElementById('clearTasks')
+
+clearButton.addEventListener('click', clearTasks) // Add click event to clear button
+
+async function clearTasks(){
+  for (let i = 1; i <= 12; i++) {
+    document.getElementById(`taskdiv${i}`).setAttribute("class", "false") // change all taskDivs to class "false"
+    const userId = document.querySelector('h3[data-user-id]').dataset.userId // grab logged in user ID from h3
+    const divId = `taskdiv${i}` // grab the div ID
+    try {
+      await fetch('todos/removeDivId', {
+        method: 'post',
+        headers: {'Content-type': 'application/json'},
+        body: JSON.stringify({
+          userId: userId,
+          divId: divId
+        }) // Send the div ID and User ID to the controller
+      })
+    } catch(err) {
+      console.log(err)
+    }
+    }
 }
