@@ -1,3 +1,5 @@
+![Screenshot](/public/images/acnhTrackingTools.gif)
+
 # Introduction
 
 This is a fullstack version of my other repo [acnhTrackingTools](https://github.com/ChrisThompsonDev/acnhTrackingTools). 
@@ -5,6 +7,13 @@ This is a fullstack version of my other repo [acnhTrackingTools](https://github.
 My partner and I love to play Animal Crossing together every morning. Recently we decided to collect all of the songs in the game, only to find that there are over 100! We got tired of running to the house everyday to check our stereos so I made this app to help us keep track of what we have!
 
 Over time, we started finding it difficult to keep track of other things, so now this tool has been upgraded to include Fossils and Art as well. Media Queries and more collections to come! I've only focused on mobile layout so far because that is the only way that we use this.
+
+# Check Out the Live Application!
+
+I am currently testing this app on several different hosting sites since Heroku has announced their plans to drop their free hosting. 
+
+[Cyclic](https://acnhtracking.cyclic.app/)
+[Render](https://acnhtrackingtools.onrender.com/)
 
 ---
 
@@ -45,6 +54,8 @@ This is being built using Mobile First ideology. I will be updating this with me
 The CSS needs work on the landing, login and signup pages. 
 
 I plan to build an API with all of the collection information.
+
+Plan to reduce the image sizes for faster loading
 
 Will be replacing the hard coded HTML with more ejs loops using the new API.
 
