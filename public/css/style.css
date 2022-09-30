@@ -269,6 +269,7 @@ div h4 {
 /* ************SECTION TABS************* */
 .mytabs {
      display: flex;
+     justify-content: center;
      flex-wrap: wrap;
      max-width: 99%;
      margin: 10px auto;

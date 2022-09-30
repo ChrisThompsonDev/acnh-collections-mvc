@@ -88,21 +88,29 @@ const clearButton = document.getElementById('clearTasks')
 clearButton.addEventListener('click', clearTasks) // Add click event to clear button
 
 async function clearTasks(){
-  for (let i = 1; i <= 12; i++) {
-    document.getElementById(`taskdiv${i}`).setAttribute("class", "false") // change all taskDivs to class "false"
+    document.getElementById('taskCheckIn').setAttribute("class", "false")
+    document.getElementById('taskVisitNooksCranny').setAttribute("class", "false")
+    document.getElementById('taskVisitAbelSisters').setAttribute("class", "false")
+    document.getElementById('taskVisitBrewster').setAttribute("class", "false")
+    document.getElementById('taskMoneyTree').setAttribute("class", "false")
+    document.getElementById('taskFindMoneyRock').setAttribute("class", "false")
+    document.getElementById('taskFindFossils').setAttribute("class", "false")
+    document.getElementById('taskMessageBottles').setAttribute("class", "false")
+    document.getElementById('taskTalkToVisitors').setAttribute("class", "false")
+    document.getElementById('taskTalkToNeighbors').setAttribute("class", "false")
+    document.getElementById('taskVisitHarvsIsland').setAttribute("class", "false")
+    document.getElementById('taskHaveFun').setAttribute("class", "false") // change all taskDivs to class "false"
     const userId = document.querySelector('h3[data-user-id]').dataset.userId // grab logged in user ID from h3
-    const divId = `taskdiv${i}` // grab the div ID
     try {
       await fetch('todos/removeDivId', {
         method: 'post',
         headers: {'Content-type': 'application/json'},
         body: JSON.stringify({
           userId: userId,
-          divId: divId
+          divId: ['taskCheckIn', 'taskVisitNooksCranny', 'taskVisitAbelSisters', 'taskVisitBrewster', 'taskMoneyTree', 'taskFindMoneyRock', 'taskFindFossils', 'taskMessageBottles', 'taskTalkToVisitors', 'taskTalkToNeighbors', 'taskVisitHarvsIsland', 'taskHaveFun']
         }) // Send the div ID and User ID to the controller
       })
     } catch(err) {
-      console.log(err)
-    }
+        console.log(err)
     }
 }

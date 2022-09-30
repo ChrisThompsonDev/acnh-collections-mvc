@@ -40,6 +40,8 @@ Each tab was also a separate webpage.
 
 I felt that this was not the best approach for progressive rendering and it could be a bit slow. I hard coded the HTML for everything and put everything on the same page. This allows for the site to load instantly.
 
+I then took the time to build out an API myself. This allowed for me to include loops in my EJS and therefore was able to cut out 941 lines of hard coded HTML!
+
 ## Lessons Learned:
 
 Every project is a lesson learned in CSS!
@@ -56,11 +58,11 @@ This is being built using Mobile First ideology. I will be updating this with me
 
 The CSS needs work on the landing, login and signup pages. 
 
-I plan to build an API with all of the collection information.
+~~I plan to build an API with all of the collection information.~~
 
 Plan to reduce the image sizes for faster loading
 
-Will be replacing the hard coded HTML with more ejs loops using the new API.
+~~Will be replacing the hard coded HTML with more ejs loops using the new API.~~
 
 Will add other collections, such as clothing, fish, bugs, and more. 
 
