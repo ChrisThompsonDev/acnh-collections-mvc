@@ -12,7 +12,7 @@ async function ChangeDivStatus(){
     const userId = document.querySelector('h3[data-user-id]').dataset.userId // grab logged in user ID from h3
     const divId = this.id // grab the div ID
     try {
-      await fetch('todos/addDivId', {
+      await fetch('tracker/addDivId', {
         method: 'post',
         headers: {'Content-type': 'application/json'},
         body: JSON.stringify({
@@ -28,7 +28,7 @@ async function ChangeDivStatus(){
     const userId = document.querySelector('h3[data-user-id]').dataset.userId // grab logged in user ID from h3
     const divId = this.id // grab the div ID
     try {
-      await fetch('todos/removeDivId', {
+      await fetch('tracker/removeDivId', {
         method: 'post',
         headers: {'Content-type': 'application/json'},
         body: JSON.stringify({
@@ -102,7 +102,7 @@ async function clearTasks(){
     document.getElementById('taskHaveFun').setAttribute("class", "false") // change all taskDivs to class "false"
     const userId = document.querySelector('h3[data-user-id]').dataset.userId // grab logged in user ID from h3
     try {
-      await fetch('todos/removeDivId', {
+      await fetch('tracker/removeDivId', {
         method: 'post',
         headers: {'Content-type': 'application/json'},
         body: JSON.stringify({

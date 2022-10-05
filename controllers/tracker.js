@@ -9,7 +9,7 @@ const umbrellas = require('../apis/umbrellasApi.js')
 module.exports = {
      getUser: async (req,res)=>{
         try{
-            res.render('todos.ejs', {user: req.user, tasks: tasks,
+            res.render('tracker.ejs', {user: req.user, tasks: tasks,
             music: music,
             gyroids: gyroids,
             fossils: fossils,
