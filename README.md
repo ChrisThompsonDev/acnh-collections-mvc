@@ -54,6 +54,8 @@ Currently this project is still a WIP.
 
 I plan to add Google Auth as a login option.
 
+I need to add a "Forgot Password" feature. That will probobly require some kind of email verification. Google Auth is a higher priority.
+
 This is being built using Mobile First ideology. I will be updating this with media queries for landscape and larger screen sizes.
 
 The CSS needs work on the landing, login and signup pages. 
