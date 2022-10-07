@@ -10,6 +10,8 @@ Over time, we started finding it difficult to keep track of other things, so now
 
 # Check Out the Live Application!
 
+I have added a Guest Login feature for anyone that just wants to take a look without making an account!
+
 I am currently testing this app on several different hosting sites since Heroku has announced their plans to drop their free hosting. 
 
 [Heroku](https://acnhtracking.herokuapp.com/)
@@ -56,9 +58,9 @@ I plan to add Google Auth as a login option.
 
 I need to add a "Forgot Password" feature. That will probobly require some kind of email verification. Google Auth is a higher priority.
 
-This is being built using Mobile First ideology. I will be updating this with media queries for landscape and larger screen sizes.
+~~This is being built using Mobile First ideology. I will be updating this with media queries for landscape and larger screen sizes.~~
 
-The CSS needs work on the landing, login and signup pages. 
+~~The CSS needs work on the landing, login and signup pages. ~~
 
 ~~I plan to build an API with all of the collection information.~~
 
@@ -69,7 +71,7 @@ Plan to reduce the image sizes for faster loading
 Will add other collections, such as clothing, fish, bugs, and more. 
 
 ## Other Projects
-Also check out other projects of mine like this one! I used the same API for this one:
+Also check out other projects of mine like this one!:
 
 [Animal Crossing Music Player](https://github.com/ChrisThompsonDev/Animal-Crossing-KK-Slider-Music-Player)
 
@@ -83,7 +85,7 @@ Also check out other projects of mine like this one! I used the same API for thi
 
 # Things to add
 
-- Create a `.env` file, place it in your config folder, and add the following as a `key: value` pair
+- Create a `.env` file, in your root folder, and add the following as a `key: value` pair
   - PORT = 2121 (can be any port example: 3000) 
   - DB_STRING = your database URI
  
