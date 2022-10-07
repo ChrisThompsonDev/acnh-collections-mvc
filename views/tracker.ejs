@@ -12,11 +12,10 @@
                     <main id="clear">
                         <button id="clearTasks">Clear Tasks</button>
                     </main>
-                    <!-- <main id="taskProgressMain">
-                        <label for="file" id="taskProgressLabel">Task Progress:</label>
-                        <span id="taskPercent">0%</span>
-                        <progress id="taskProgress" max="12" value="0"> 0% </progress>
-                    </main> -->
+                    <main class="progressMain" id="taskProgressMain">
+                        <label for="file" class="progressLabel">Progress: <span id="taskPercent"></span> /12</label>
+                        <progress id="taskProgress" max="12" value="0"></progress>
+                    </main>
                     <main id="taskmain1">
                         <% for (var i = 0; i < tasks.length; i++) {%>
                             <div id="<%= tasks[i].id %>" class="<%= (user.completedDivs.includes(tasks[i].id) ? 'true' : 'false')  %>">
@@ -32,6 +31,10 @@
                 <label for="musicTab">Music</label>
                 <section class="tab">
                     <h2>K.K. Slider Music</h2>
+                    <main class="progressMain" id="musicProgressMain">
+                        <label for="file" class="progressLabel">Progress: <span id="musicPercent"></span> /107</label>
+                        <progress id="musicProgress" max="107" value="0"></progress>
+                    </main>
                     <main id="musicMain1">
                         <% for (var i = 0; i < music.length; i++) {%>
                             <div id="<%= music[i].id %>" class="<%= (user.completedDivs.includes(music[i].id) ? 'true' : 'false')  %>">
@@ -47,6 +50,10 @@
                 <label for="gyroidsTab">Gyroids</label>
                 <section class="tab">
                     <h2>Gyroids</h2>
+                    <main class="progressMain" id="gyroidProgressMain">
+                        <label for="file" class="progressLabel">Progress: <span id="gyroidPercent"></span> /36</label>
+                        <progress id="gyroidProgress" max="36" value="0"></progress>
+                    </main>
                     <main id="gyroidMain1">
                         <% for (var i = 0; i < gyroids.length; i++) {%>
                             <div id="<%= gyroids[i].id %>" class="<%= (user.completedDivs.includes(gyroids[i].id) ? 'true' : 'false')  %>">
@@ -62,6 +69,10 @@
                 <label for="fossilsTab">Fossils</label>
                 <section class="tab">
                     <h2>Fossils</h2>
+                    <main class="progressMain" id="fossilProgressMain">
+                        <label for="file" class="progressLabel">Progress: <span id="fossilPercent"></span> /73</label>
+                        <progress id="fossilProgress" max="73" value="0"></progress>
+                    </main>
                     <main id="fossilMain1">
                         <% for (var i = 0; i < fossils.length; i++) {%>
                             <div id="<%= fossils[i].id %>" class="<%= (user.completedDivs.includes(fossils[i].id) ? 'true' : 'false')  %>">
@@ -77,6 +88,10 @@
                 <label for="artTab">Art</label>
                 <section class="tab">
                     <h2>Art</h2>
+                    <main class="progressMain" id="artProgressMain">
+                        <label for="file" class="progressLabel">Progress: <span id="artPercent"></span> /43</label>
+                        <progress id="artProgress" max="43" value="0"></progress>
+                    </main>
                     <main id="artMain1">
                         <% for (var i = 0; i < art.length; i++) {%>
                             <div id="<%= art[i].id %>" class="<%= (user.completedDivs.includes(art[i].id) ? 'true' : 'false')  %>">
@@ -92,6 +107,10 @@
                 <label for="umbrellasTab">Umbrellas</label>
                 <section class="tab">
                     <h2>Umbrellas</h2>
+                    <main class="progressMain" id="umbrellaProgressMain">
+                        <label for="file" class="progressLabel">Progress: <span id="umbrellaPercent"></span> /68</label>
+                        <progress id="umbrellaProgress" max="68" value="0"></progress>
+                    </main>
                     <main id="UmbrellasMain1">
                         <% for (var i = 0; i < umbrellas.length; i++) {%>
                             <div id="<%= umbrellas[i].id %>" class="<%= (user.completedDivs.includes(umbrellas[i].id) ? 'true' : 'false')  %>">

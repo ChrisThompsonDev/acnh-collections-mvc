@@ -9,6 +9,7 @@ Array.from(taskItems).forEach((el)=>{
 async function ChangeDivStatus(){
   if (this.getAttribute('class') === 'false'){ // If the div is not already highlighted, change its class to true
     this.setAttribute("class", "true")
+    updateCompletedItems()
     const userId = document.querySelector('h3[data-user-id]').dataset.userId // grab logged in user ID from h3
     const divId = this.id // grab the div ID
     try {
@@ -25,6 +26,7 @@ async function ChangeDivStatus(){
     }
   } else if (this.getAttribute('class') === 'true') { // If the div is already highlighted, change its class to false
     this.setAttribute("class", "false")
+    updateCompletedItems()
     const userId = document.querySelector('h3[data-user-id]').dataset.userId // grab logged in user ID from h3
     const divId = this.id // grab the div ID
     try {
@@ -69,15 +71,65 @@ for(var i=0;i<radios.length;i++){
 
 // *************** Tracking bar ************
 // Global variable for each tracking bar
-// For loop counting number of DIVs for each category
-// Change span ID to global variable
 // Add or subtract from global variable with each click
-/* function progressBar(categoryId, categoryMax, categoryClass) {
-  for(let i = 0; i <= categoryMax; i++) {
-    
-  }
-} */
 
+// Create array of all divs with the class of "true"
+let completedItems = document.querySelectorAll('.true')
+// Count number of completed items with id that contains 'tas'
+let taskTracker = countCompletedItems('tas')
+// Count number of completed items with id that contains 'mus'
+let musicTracker = countCompletedItems('mus')
+// Count number of completed items with id that contains 'gyr'
+let gyroidTracker = countCompletedItems('gyr')
+// Count number of completed items with id that contains 'fos'
+let fossilTracker = countCompletedItems('fos')
+// Count number of completed items with id that contains 'art'
+let artTracker = countCompletedItems('art')
+// Count number of completed items with id that contains 'umb'
+let umbrellaTracker = countCompletedItems('umb')
+
+//function to count the completed items in each category
+function countCompletedItems(category) {
+  return [...completedItems].map(element => element.id.toString().substring(0, 3)).filter(element => element === category).length
+}
+
+// Function to add item count to progress bar
+function updateProgressBars(progressid, numberid, counter) {
+  document.querySelector(progressid).setAttribute('value', counter)
+  document.querySelector(numberid).innerText = counter.toString()
+}
+
+// Function to update the counted items
+function updateCompletedItems() {
+  completedItems = document.querySelectorAll('.true')
+  taskTracker = countCompletedItems('tas')
+  musicTracker = countCompletedItems('mus')
+  gyroidTracker = countCompletedItems('gyr')
+  fossilTracker = countCompletedItems('fos')
+  artTracker = countCompletedItems('art')
+  umbrellaTracker = countCompletedItems('umb')
+  updateProgressBars('#taskProgress', '#taskPercent', taskTracker)
+  console.log(`${taskTracker} Tasks Completed!`)
+  updateProgressBars('#musicProgress', '#musicPercent',musicTracker)
+  console.log(`${musicTracker} Songs Collected!`)
+  updateProgressBars('#gyroidProgress', '#gyroidPercent',gyroidTracker)
+  console.log(`${gyroidTracker} Gyroids Collected!`)
+  updateProgressBars('#fossilProgress', '#fossilPercent',fossilTracker)
+  console.log(`${fossilTracker} Fossils Collected!`)
+  updateProgressBars('#artProgress', '#artPercent',artTracker)
+  console.log(`${artTracker} Art Collected!`)
+  updateProgressBars('#umbrellaProgress', '#umbrellaPercent',umbrellaTracker)
+  console.log(`${umbrellaTracker} Umbrellas Collected!`)
+}
+updateCompletedItems()
+
+// If progress bar is full, change color to green
+/* function completedProgress() {
+  if (taskTracker === 12) {
+
+  }
+}
+completedProgress() */
 
 
 // *************** Clear Tasks Button ************
@@ -88,6 +140,7 @@ const clearButton = document.getElementById('clearTasks')
 clearButton.addEventListener('click', clearTasks) // Add click event to clear button
 
 async function clearTasks(){
+    // change all taskDivs to class "false"
     document.getElementById('taskCheckIn').setAttribute("class", "false")
     document.getElementById('taskVisitNooksCranny').setAttribute("class", "false")
     document.getElementById('taskVisitAbelSisters').setAttribute("class", "false")
@@ -99,7 +152,9 @@ async function clearTasks(){
     document.getElementById('taskTalkToVisitors').setAttribute("class", "false")
     document.getElementById('taskTalkToNeighbors').setAttribute("class", "false")
     document.getElementById('taskVisitHarvsIsland').setAttribute("class", "false")
-    document.getElementById('taskHaveFun').setAttribute("class", "false") // change all taskDivs to class "false"
+    document.getElementById('taskHaveFun').setAttribute("class", "false")
+    //Clear Task Progress Bar
+    updateCompletedItems()
     const userId = document.querySelector('h3[data-user-id]').dataset.userId // grab logged in user ID from h3
     try {
       await fetch('tracker/removeDivId', {
