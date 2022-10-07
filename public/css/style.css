@@ -111,10 +111,12 @@ header {
      /* margin-right: auto; */
 }
 h3 {
-     font-size: 2rem;
+     font-size: 2.25rem;
+     margin-bottom: 1rem;
 }
 a {
-     font-size: 1.2rem;
+     font-size: 2rem;
+     
 }
 
 
@@ -128,12 +130,16 @@ a {
      
 }
 #main1 p {
-     font-size: 1.5rem;
+     font-size: 1.75rem;
      line-height: 1.5;
      margin: 2rem 0;
      width: 99%;
 }
-#loginButton, #signupButton, #clearTasks {
+
+.hidden {
+     visibility: hidden;
+}
+#loginButton, #signupButton, #guestButton, .submitButton, #clearTasks {
      background-color: #afeaa7;
      border: 2px solid #0d8723;
      border-radius: 30px;
@@ -190,8 +196,11 @@ a {
      align-items: center;
      
 }
-#signupSection form input {
+.inputForm {
      margin: 1rem auto;
+     width: 25rem;
+     height: 5rem;
+     border-radius: .5rem;
 }
 #main1 h3 {
      width: 100%;
@@ -322,6 +331,9 @@ div h4 {
      width: 100%;
      margin: 30px 0;
      padding: 0 10px;
+}
+#footerDiv p {
+     font-size: 2rem;
 }
 
 
