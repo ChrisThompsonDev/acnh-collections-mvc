@@ -87,6 +87,8 @@ let fossilTracker = countCompletedItems('fos')
 let artTracker = countCompletedItems('art')
 // Count number of completed items with id that contains 'umb'
 let umbrellaTracker = countCompletedItems('umb')
+// Count number of completed items with id that contains 'fis'
+let fishTracker = countCompletedItems('fis')
 
 //function to count the completed items in each category
 function countCompletedItems(category) {
@@ -108,18 +110,21 @@ function updateCompletedItems() {
   fossilTracker = countCompletedItems('fos')
   artTracker = countCompletedItems('art')
   umbrellaTracker = countCompletedItems('umb')
+  fishTracker = countCompletedItems('fis')
   updateProgressBars('#taskProgress', '#taskPercent', taskTracker)
   console.log(`${taskTracker} Tasks Completed!`)
-  updateProgressBars('#musicProgress', '#musicPercent',musicTracker)
+  updateProgressBars('#musicProgress', '#musicPercent', musicTracker)
   console.log(`${musicTracker} Songs Collected!`)
-  updateProgressBars('#gyroidProgress', '#gyroidPercent',gyroidTracker)
+  updateProgressBars('#gyroidProgress', '#gyroidPercent', gyroidTracker)
   console.log(`${gyroidTracker} Gyroids Collected!`)
-  updateProgressBars('#fossilProgress', '#fossilPercent',fossilTracker)
+  updateProgressBars('#fossilProgress', '#fossilPercent', fossilTracker)
   console.log(`${fossilTracker} Fossils Collected!`)
-  updateProgressBars('#artProgress', '#artPercent',artTracker)
+  updateProgressBars('#artProgress', '#artPercent', artTracker)
   console.log(`${artTracker} Art Collected!`)
-  updateProgressBars('#umbrellaProgress', '#umbrellaPercent',umbrellaTracker)
+  updateProgressBars('#umbrellaProgress', '#umbrellaPercent', umbrellaTracker)
   console.log(`${umbrellaTracker} Umbrellas Collected!`)
+  updateProgressBars('#fishProgress', '#fishPercent', fishTracker)
+  console.log(`${fishTracker} Fish Collected!`)
 }
 updateCompletedItems()
 

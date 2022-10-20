@@ -121,6 +121,25 @@
                     </main>
                 </section>
 
+                <!--**********Fish************-->
+                <input type="radio" id="fishTab" name="mytabs">
+                <label for="fishTab">Fish</label>
+                <section class="tab">
+                    <h2>Fish</h2>
+                    <main class="progressMain" id="fishProgressMain">
+                        <label for="file" class="progressLabel">Progress: <span id="fishPercent"></span> /80</label>
+                        <progress id="fishProgress" max="80" value="0"></progress>
+                    </main>
+                    <main id="FishMain1">
+                        <% for (var i = 0; i < fish.length; i++) {%>
+                            <div id="<%= fish[i].id %>" class="<%= (user.completedDivs.includes(fish[i].id) ? 'true' : 'false')  %>">
+                                <img src="<%= fish[i].img %>" class="images" name="<%= fish[i].title %>">
+                                <h4><%= fish[i].title %></h4>
+                            </div>
+                        <% } %>
+                    </main>
+                </section>
+
                 <!--**********Insects************-->
                 <input type="radio" id="insectsTab" name="mytabs">
                 <label for="insectsTab">Insects <i class="fa-solid fa-triangle-exclamation"></i></label>
