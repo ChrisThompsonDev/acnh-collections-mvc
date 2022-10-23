@@ -89,6 +89,10 @@ let artTracker = countCompletedItems('art')
 let umbrellaTracker = countCompletedItems('umb')
 // Count number of completed items with id that contains 'fis'
 let fishTracker = countCompletedItems('fis')
+// Count number of completed items with id that contains 'sea'
+let seaCreaturesTracker = countCompletedItems('sea')
+// Count number of completed items with id that contains 'ins'
+let insectsTracker = countCompletedItems('ins')
 
 //function to count the completed items in each category
 function countCompletedItems(category) {
@@ -111,6 +115,8 @@ function updateCompletedItems() {
   artTracker = countCompletedItems('art')
   umbrellaTracker = countCompletedItems('umb')
   fishTracker = countCompletedItems('fis')
+  seaCreaturesTracker = countCompletedItems('sea')
+  insectsTracker = countCompletedItems('ins')
   updateProgressBars('#taskProgress', '#taskPercent', taskTracker)
   console.log(`${taskTracker} Tasks Completed!`)
   updateProgressBars('#musicProgress', '#musicPercent', musicTracker)
@@ -125,6 +131,10 @@ function updateCompletedItems() {
   console.log(`${umbrellaTracker} Umbrellas Collected!`)
   updateProgressBars('#fishProgress', '#fishPercent', fishTracker)
   console.log(`${fishTracker} Fish Collected!`)
+  updateProgressBars('#seaCreaturesProgress', '#seaCreaturesPercent', seaCreaturesTracker)
+  console.log(`${seaCreaturesTracker} Sea Creatures Collected!`)
+  updateProgressBars('#insectsProgress', '#insectsPercent', insectsTracker)
+  console.log(`${insectsTracker} Insects Collected!`)
 }
 updateCompletedItems()
 

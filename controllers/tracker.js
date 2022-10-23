@@ -6,6 +6,8 @@ const fossils = require('../apis/fossilsApi.js')
 const art = require('../apis/artApi.js')
 const umbrellas = require('../apis/umbrellasApi.js')
 const fish = require('../apis/fishApi.js')
+const seaCreatures = require('../apis/seaCreaturesApi.js')
+const insects = require('../apis/insectsApi.js')
 
 module.exports = {
      getUser: async (req,res)=>{
@@ -17,6 +19,8 @@ module.exports = {
             art: art,
             umbrellas: umbrellas,
             fish: fish,
+            seaCreatures: seaCreatures,
+            insects: insects,
           })
             console.log(tasks)
         }catch(err){

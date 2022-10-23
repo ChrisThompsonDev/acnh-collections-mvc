@@ -121,6 +121,25 @@
                     </main>
                 </section>
 
+                <!--**********Insects************-->
+                <input type="radio" id="insectsTab" name="mytabs">
+                <label for="insectsTab">Insects</label>
+                <section class="tab">
+                    <h2>Insects</h2>
+                    <main class="progressMain" id="insectsProgressMain">
+                        <label for="file" class="progressLabel">Progress: <span id="insectsPercent"></span> /80</label>
+                        <progress id="insectsProgress" max="80" value="0"></progress>
+                    </main>
+                    <main id="InsectsMain1">
+                        <% for (var i = 0; i < insects.length; i++) {%>
+                            <div id="<%= insects[i].id %>" class="<%= (user.completedDivs.includes(insects[i].id) ? 'true' : 'false')  %>">
+                                <img src="<%= insects[i].img %>" class="images" name="<%= insects[i].title %>">
+                                <h4><%= insects[i].title %></h4>
+                            </div>
+                        <% } %>
+                    </main>
+                </section>
+
                 <!--**********Fish************-->
                 <input type="radio" id="fishTab" name="mytabs">
                 <label for="fishTab">Fish</label>
@@ -140,23 +159,22 @@
                     </main>
                 </section>
 
-                <!--**********Insects************-->
-                <input type="radio" id="insectsTab" name="mytabs">
-                <label for="insectsTab">Insects <i class="fa-solid fa-triangle-exclamation"></i></label>
-                <section class="tab">
-                    <h2>Insects</h2>
-                    <main id="InsectsMain1">
-                        <span>Coming Soon!</span>
-                    </main>
-                </section>
-
                 <!--**********Sea Creatures************-->
                 <input type="radio" id="seaCreaturesTab" name="mytabs">
-                <label for="seaCreaturesTab">Sea Creatures <i class="fa-solid fa-triangle-exclamation"></i></label>
+                <label for="seaCreaturesTab">Sea Creatures</label>
                 <section class="tab">
                     <h2>Sea Creatures</h2>
+                    <main class="progressMain" id="seaCreaturesProgressMain">
+                        <label for="file" class="progressLabel">Progress: <span id="seaCreaturesPercent"></span> /40</label>
+                        <progress id="seaCreaturesProgress" max="40" value="0"></progress>
+                    </main>
                     <main id="SeaCreaturesMain1">
-                        <span>Coming Soon!</span>
+                        <% for (var i = 0; i < seaCreatures.length; i++) {%>
+                            <div id="<%= seaCreatures[i].id %>" class="<%= (user.completedDivs.includes(seaCreatures[i].id) ? 'true' : 'false')  %>">
+                                <img src="<%= seaCreatures[i].img %>" class="images" name="<%= seaCreatures[i].title %>">
+                                <h4><%= seaCreatures[i].title %></h4>
+                            </div>
+                        <% } %>
                     </main>
                 </section>
 
