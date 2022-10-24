@@ -8,6 +8,8 @@ const umbrellas = require('../apis/umbrellasApi.js')
 const fish = require('../apis/fishApi.js')
 const seaCreatures = require('../apis/seaCreaturesApi.js')
 const insects = require('../apis/insectsApi.js')
+const tools = require('../apis/toolsApi.js')
+
 
 module.exports = {
      getUser: async (req,res)=>{
@@ -21,6 +23,7 @@ module.exports = {
             fish: fish,
             seaCreatures: seaCreatures,
             insects: insects,
+            tools: tools,
           })
             console.log(tasks)
         }catch(err){

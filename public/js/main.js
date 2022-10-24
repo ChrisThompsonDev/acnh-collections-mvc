@@ -93,6 +93,8 @@ let fishTracker = countCompletedItems('fis')
 let seaCreaturesTracker = countCompletedItems('sea')
 // Count number of completed items with id that contains 'ins'
 let insectsTracker = countCompletedItems('ins')
+// Count number of completed items with id that contains 'too'
+let toolsTracker = countCompletedItems('too')
 
 //function to count the completed items in each category
 function countCompletedItems(category) {
@@ -117,6 +119,7 @@ function updateCompletedItems() {
   fishTracker = countCompletedItems('fis')
   seaCreaturesTracker = countCompletedItems('sea')
   insectsTracker = countCompletedItems('ins')
+  toolsTracker = countCompletedItems('too')
   updateProgressBars('#taskProgress', '#taskPercent', taskTracker)
   console.log(`${taskTracker} Tasks Completed!`)
   updateProgressBars('#musicProgress', '#musicPercent', musicTracker)
@@ -135,6 +138,8 @@ function updateCompletedItems() {
   console.log(`${seaCreaturesTracker} Sea Creatures Collected!`)
   updateProgressBars('#insectsProgress', '#insectsPercent', insectsTracker)
   console.log(`${insectsTracker} Insects Collected!`)
+  updateProgressBars('#toolsProgress', '#toolsPercent', toolsTracker)
+  console.log(`${toolsTracker} Tools Collected!`)
 }
 updateCompletedItems()
 

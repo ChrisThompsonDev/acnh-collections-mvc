@@ -178,6 +178,25 @@
                     </main>
                 </section>
 
+                <!--**********Tools************-->
+                <input type="radio" id="toolsTab" name="mytabs">
+                <label for="toolsTab">Tools</label>
+                <section class="tab">
+                    <h2>Tools</h2>
+                    <main class="progressMain" id="toolsProgressMain">
+                        <label for="file" class="progressLabel">Progress: <span id="toolsPercent"></span> /6</label>
+                        <progress id="toolsProgress" max="6" value="0"></progress>
+                    </main>
+                    <main id="ToolsMain1">
+                        <% for (var i = 0; i < tools.length; i++) {%>
+                            <div id="<%= tools[i].id %>" class="<%= (user.completedDivs.includes(tools[i].id) ? 'true' : 'false')  %>">
+                                <img src="<%= tools[i].img %>" class="images" name="<%= tools[i].title %>">
+                                <h4><%= tools[i].title %></h4>
+                            </div>
+                        <% } %>
+                    </main>
+                </section>
+                
                 <!--**********Clothing************-->
                 <input type="radio" id="clothingTab" name="mytabs">
                 <label for="clothingTab">Clothing <i class="fa-solid fa-triangle-exclamation"></i></label>
@@ -188,15 +207,7 @@
                     </main>
                 </section>
 
-                <!--**********Tools************-->
-                <input type="radio" id="toolsTab" name="mytabs">
-                <label for="toolsTab">Tools <i class="fa-solid fa-triangle-exclamation"></i></label>
-                <section class="tab">
-                    <h2>Tools</h2>
-                    <main id="ToolsMain1">
-                        <span>Coming Soon!</span>
-                    </main>
-                </section>
+                
 		</nav>
     </main>
 <%- include('partials/footer') -%>

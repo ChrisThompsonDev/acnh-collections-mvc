@@ -162,7 +162,7 @@ const music = [
     {
         id: "musicKKD&B",
         img: "https://acnhapi.com/v1/images/songs/28",
-        title: "K.K. D&amp;B",
+        title: "K.K. D&B",
     },
     {
         id: "musicKKDirge",
